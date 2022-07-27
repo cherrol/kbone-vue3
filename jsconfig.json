@@ -1,0 +1,73 @@
+{
+  "exclude": [
+    "dist",
+    "node_modules",
+    ".idea",
+    ".vscode"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@uiux": [
+        "src/uiux"
+      ],
+      "@uiux/*": [
+        "src/uiux/*"
+      ],
+      "@components": [
+        "src/uiux/components"
+      ],
+      "@components/*": [
+        "src/uiux/components/*"
+      ],
+      "@widgets": [
+        "src/uiux/widgets"
+      ],
+      "@widgets/*": [
+        "src/uiux/widgets/*"
+      ],
+      "@request": [
+        "src/request"
+      ],
+      "@request/*": [
+        "src/request/*"
+      ],
+      "@images": [
+        "src/assets/images"
+      ],
+      "@images/*": [
+        "src/assets/images/*"
+      ],
+      "@utils": [
+        "src/utils"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@router": [
+        "src/router"
+      ],
+      "@router/*": [
+        "src/router/*"
+      ],
+      "@store": [
+        "src/store"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@pages": [
+        "src/pages"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ]
+    },
+    "target": "ES5",
+    "module": "ES6",
+    "jsx": "preserve"
+  }
+}
