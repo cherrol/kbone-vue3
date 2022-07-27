@@ -1,0 +1,15 @@
+
+:root {
+  /* Component Colors   */
+	--van-primary-color: #449968;
+	--van-success-color: var(--van-green);
+	--van-danger-color: var(--van-red);
+	--van-warning-color: var(--van-orange);
+	--van-text-color: var(--van-gray-8);
+	--van-text-color-2: var(--van-gray-6);
+	--van-text-color-3: var(--van-gray-5);
+	--van-text-link-color: #576b95;
+	--van-active-color: var(--van-gray-2);
+	--van-background-color: var(--van-gray-1);
+	--van-background-color-light: var(--van-white);
+}

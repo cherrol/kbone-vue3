@@ -1,5 +1,5 @@
 <template>
-	<div>Page Home</div>
+	<div>Page Staging</div>
 </template>
 
 <script>
@@ -7,10 +7,10 @@ import { ref } from "vue";
 import { setNavigationBarTitle } from "kbone-api";
 
 export default {
-	name: "PageHome",
+	name: "PageStaging",
 	props: [],
 	setup(props) {
-		const title = ref("Page Home");
+		const title = ref("Page Staging");
 		setNavigationBarTitle({
 			title: title.value
 		});
