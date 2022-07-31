@@ -105,6 +105,10 @@ module.exports = {
 				use: [MiniCssExtractPlugin.loader, "css-loader"]
 			},
 			{
+				test: /\.scss$/,
+				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+			},
+			{
 				test: /\.vue$/,
 				use: ["vue-loader"]
 			},
@@ -119,6 +123,11 @@ module.exports = {
 				options: {
 					name: "[name].[ext]?[hash]"
 				}
+			},
+			{
+				resourceQuery: /blockType=i18n/,
+				type: "javascript/auto",
+				loader: "@intlify/vue-i18n-loader"
 			}
 		]
 	},

@@ -11,7 +11,6 @@
   "eslint.run": "onSave",
   "eslint.validate": [
     "javascript",
-    "javascriptreact",
     "vue"
   ],
   "eslint.alwaysShowStatus": true,
@@ -20,8 +19,13 @@
   "[javascript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
     "editor.formatOnSave": true
   }
 }

@@ -4,7 +4,8 @@ import { setStorageSync, getStorageSync } from "kbone-api";
 export default createStore({
 	state: {
 		profile: getStorageSync("profile"),
-		userInfo: null
+		userInfo: null,
+		title: "App"
 	},
 	getters: {
 		role({ profile }) {
@@ -19,6 +20,10 @@ export default createStore({
 			console.log(data);
 			setStorageSync("profile", data);
 			state.profile = data;
+		},
+		SET_TITLE(state, data) {
+			console.log(`title: ${data}`);
+			state.title = data;
 		}
 	}
 });

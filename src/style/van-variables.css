@@ -1,0 +1,48 @@
+:root {
+	/* vant variables   */
+	--van-black: #000;
+	--van-white: #fff;
+	--van-primary-color: #449968;
+	--van-success-color: #07c160;
+	--van-danger-color: #ee0a24;
+	--van-warning-color: #ff976a;
+	--van-text-color: #323233;
+	--van-text-color-2: #969799;
+	--van-text-color-3: #c8c9cc;
+	--van-text-link-color: #576b95;
+	--van-active-color: #f2f3f5;
+	--van-background-color: #f7f8fa;
+	--van-background-color-light: #fff;
+	/* Padding */
+	--van-padding-base: 4px;
+	--van-padding-xs: 8px;
+	--van-padding-sm: 12px;
+	--van-padding-md: 16px;
+	--van-padding-lg: 24px;
+	--van-padding-xl: 32px;
+	--van-padding-2xl: 48px;
+	/* Font */
+	--van-font-size-xs: 10px;
+	--van-font-size-sm: 12px;
+	--van-font-size-md: 14px;
+	--van-font-size-lg: 16px;
+	--van-font-weight-bold: 500;
+	--van-line-height-xs: 14px;
+	--van-line-height-sm: 18px;
+	--van-line-height-md: 20px;
+	--van-line-height-lg: 22px;
+	--van-base-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+		Helvetica, Segoe UI, Arial, Roboto, "PingFang SC", "miui",
+		"Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+	--van-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue,
+		Arial, sans-serif;
+	/* Border */
+	--van-border-color: #ebedf0;
+	--van-border-width-base: 1px;
+	--van-border-width-sm: 2px;
+	--van-border-width-md: 4px;
+	--van-border-radius-sm: 2px;
+	--van-border-radius-md: 4px;
+	--van-border-radius-lg: 8px;
+	--van-border-radius-max: 999px;
+}

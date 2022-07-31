@@ -1,8 +1,9 @@
 import { createApp as create } from "vue";
+import { ConfigProvider, NavBar } from "vant";
 import App from "./App.vue";
 import store from "@store/index";
 import router from "@router/index";
-import { ConfigProvider } from "vant";
+import "./style/van-variables.css";
 import "./main.css";
 import "windi.css";
 
@@ -15,10 +16,15 @@ export default function createApp() {
 
 	const app = create(App);
 
+	// store and router
 	app.use(store);
 	app.use(router);
-	app.use(ConfigProvider);
 
+	// van-components
+	app.use(ConfigProvider);
+	app.use(NavBar);
+
+	// mount app
 	app.mount("#app");
 
 	return app;

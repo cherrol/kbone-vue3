@@ -2,7 +2,7 @@
 	<div>
 		<div>Page Profile</div>
 		<div class="flex">
-			<div class="p-sm">
+			<div class="px-sm">
 				<van-button
 					type="primary"
 					:disabled="role === 'authenticated'"
@@ -11,7 +11,7 @@
 					登录
 				</van-button>
 			</div>
-			<div class="p-sm">
+			<div class="px-sm">
 				<van-button
 					type="warning"
 					:disabled="role === 'unauthenticated'"
@@ -32,7 +32,7 @@ import { Button } from "vant";
 import "vant/lib/button/style";
 
 export default {
-	name: "PageProfile",
+	name: "UserLogin",
 	components: {
 		[Button.name]: Button
 	},
