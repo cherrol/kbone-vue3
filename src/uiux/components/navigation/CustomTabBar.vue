@@ -14,9 +14,6 @@
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
 import { Button, Tabbar, TabbarItem } from "vant";
-import "vant/lib/button/style";
-import "vant/lib/tabbar/style";
-import "vant/lib/tabbar-item/style";
 
 export default {
 	name: "CustomTabBar",

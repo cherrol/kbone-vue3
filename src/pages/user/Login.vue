@@ -31,7 +31,6 @@ import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { showModal } from "kbone-api";
 import { Button } from "vant";
-import "vant/lib/button/style";
 import { setPageTitle } from "@utils/page";
 
 export default {

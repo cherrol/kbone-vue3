@@ -26,7 +26,6 @@
 import { onMounted } from "vue";
 import { useStore } from "vuex";
 import { Button } from "vant";
-import "vant/lib/button/style";
 import { setPageTitle } from "@utils/page";
 
 export default {

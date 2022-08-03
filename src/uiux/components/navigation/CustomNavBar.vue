@@ -9,7 +9,6 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 import { NavBar } from "vant";
-import "vant/lib/nav-bar/style";
 
 export default {
 	name: "CustomNavBar",
