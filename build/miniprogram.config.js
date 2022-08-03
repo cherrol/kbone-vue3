@@ -1,3 +1,6 @@
+require("dotenv").config({ path: ".env.locale" });
+// console.log(process.env.WECHAT_APPID);
+
 module.exports = {
 	origin: "https://test.miniprogram.com",
 	entry: "/",
@@ -16,7 +19,7 @@ module.exports = {
 		navigationStyle: "custom"
 	},
 	projectConfig: {
-		appid: "wx0bda290a529e645d",
-		projectname: "kbone-vue3"
+		appid: process.env.WECHAT_APPID,
+		projectname: "信使小程序"
 	}
 };

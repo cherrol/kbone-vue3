@@ -1,16 +1,17 @@
 <template>
-	<div class="page-register">Page Register</div>
+	<div>Page Home</div>
 </template>
+
 <script>
-import { setPageTitle } from "@utils/page";
 import { onMounted } from "vue";
+import { setPageTitle } from "@utils/page";
 
 export default {
-	name: "PageRegister",
+	name: "PageHome",
 	props: [],
 	setup(props) {
 		onMounted(() => {
-			setPageTitle("Register");
+			setPageTitle("Home");
 		});
 
 		return {

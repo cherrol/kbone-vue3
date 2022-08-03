@@ -1,38 +1,52 @@
 <template>
-	<div class="w-full h-full flex flex-col">
+	<div class="page-app w-full h-full flex flex-col">
 		<div
-			v-if="!isWin"
-			class="flex-none bg-primary custom-nav-bar"
+			class="flex-none custom-nav-bar"
 			:style="{
 				paddingTop: statusBarHeight + 'px',
-				'--van-nav-bar-height': navBarHeight + 'px'
+				'--van-nav-bar-height': navBarHeight + 'px',
+				'--nav-bar-background-color': navBarBackgroundColor,
+				'--van-nav-bar-title-text-color': navBarTitleTextColor,
+				'--van-nav-bar-icon-color': navBarTitleTextColor
 			}"
 		>
-			<van-nav-bar :title="title" left-arrow @click-left="$router.back()" />
+			<CustomNavBar />
 		</div>
 		<div class="flex-auto">
-			<router-view></router-view>
+			<router-view />
+		</div>
+		<div v-if="tabBar" class="flex-none custom-tab-bar">
+			<CustomTabBar />
 		</div>
 	</div>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted, inject, computed } from "vue";
+import { ref, onMounted, onUnmounted, onUpdated, computed } from "vue";
 import { useStore } from "vuex";
 import { getSystemInfoSync } from "kbone-api";
+import CustomNavBar from "@components/navigation/CustomNavBar.vue";
+import CustomTabBar from "@components/navigation/CustomTabBar.vue";
 import { setPageTitle } from "@utils/page";
-import "vant/lib/nav-bar/style";
 
 export default {
+	components: { CustomNavBar, CustomTabBar },
 	setup() {
 		const statusBarHeight = ref(0);
 		const navBarHeight = ref(0);
-		const isWin = ref(false);
 		const store = useStore();
+		const tabBar = computed(() => store.state.tabBar);
+		const navBarBackgroundColor = computed(
+			() => store.state.navBarBackgroundColor
+		);
+		const navBarTitleTextColor = computed(
+			() => store.state.navBarTitleTextColor
+		);
 
 		onMounted(() => {
-			console.log("App mounted");
-			setPageTitle("Page App");
+			console.log("App Mounted");
+
+			setPageTitle("App");
 
 			const sysInfo = getSystemInfoSync();
 			// console.log(JSON.stringify(sysInfo, null, 2));
@@ -48,38 +62,31 @@ export default {
 				console.log("is Android");
 				navBarHeight.value = 44;
 			} else {
-				console.log("is others");
+				console.log("is Others");
 				navBarHeight.value = 46;
 			}
+		});
 
-			// windows 小程序不支持自定义状态栏
-			if (sysInfo.system.indexOf("Windows") > -1) {
-				console.log("is windows");
-				navBarHeight.value = 0;
-				isWin.value = true;
-			}
-
-			console.log(isWin.value);
+		onUpdated(() => {
+			// console.log(showLeftArrow.value);
 		});
 
 		onUnmounted(() => {
-			console.log("App unmounted");
+			console.log("App Unmounted");
 		});
 
 		return {
 			statusBarHeight,
 			navBarHeight,
-			isWin,
-			title: computed(() => store.state.title)
+			tabBar,
+			navBarBackgroundColor,
+			navBarTitleTextColor
 		};
 	}
 };
 </script>
 <style lang="scss">
-:root {
-	--van-nav-bar-background-color: var(--van-primary-color);
-	--van-nav-bar-title-text-color: var(--van-white);
-	--van-nav-bar-icon-color: var(--van-white);
-	--van-nav-bar-height: 46px;
+.custom-nav-bar {
+	background-color: var(--nav-bar-background-color);
 }
 </style>

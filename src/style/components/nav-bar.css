@@ -1,0 +1,10 @@
+:root {
+	/*
+	 * 定义导航样式
+	**/
+	--nav-bar-background-color: var(--van-primary-color);
+	--van-nav-bar-background-color: transparent;
+	--van-nav-bar-title-text-color: var(--van-white);
+	--van-nav-bar-icon-color: var(--van-white);
+	--van-nav-bar-height: 46px;
+}
