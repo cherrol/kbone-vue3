@@ -1,13 +1,13 @@
 <template>
 	<van-tabbar v-model="active" :fixed="false" route>
 		<van-tabbar-item to="/home" name="home" icon="wap-home">
-			小海报
+			Home
 		</van-tabbar-item>
 		<van-tabbar-item to="/staging" name="staging" icon="point-gift">
-			福利
+			Staging
 		</van-tabbar-item>
 		<van-tabbar-item to="/profile" name="profile" icon="manager">
-			我的
+			Profile
 		</van-tabbar-item>
 	</van-tabbar>
 </template>
