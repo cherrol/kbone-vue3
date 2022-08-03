@@ -20,6 +20,6 @@ module.exports = {
 	},
 	projectConfig: {
 		appid: process.env.WECHAT_APPID,
-		projectname: "信使小程序"
+		projectname: "微信小程序"
 	}
 };
