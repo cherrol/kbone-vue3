@@ -5,12 +5,13 @@ const { VueLoaderPlugin } = require("vue-loader");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MpPlugin = require("mp-webpack-plugin"); // 用于构建小程序代码的 webpack 插件
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+	require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const { VantResolver } = require("unplugin-vue-components/resolvers");
 const ComponentsPlugin = require("unplugin-vue-components/webpack");
 const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 
-const isOptimize = process.env.NODE_ENV === "production"; // 是否压缩业务代码，开发者工具可能无法完美支持业务代码使用到的 es 特性，建议自己做代码压缩
+const isProd = process.env.NODE_ENV === "production"; // 是否压缩业务代码，开发者工具可能无法完美支持业务代码使用到的 es 特性，建议自己做代码压缩
 
 module.exports = {
 	mode: "production",
@@ -69,7 +70,7 @@ module.exports = {
 			}
 		},
 
-		minimizer: isOptimize
+		minimizer: isProd
 			? [
 					// 压缩CSS
 					new CssMinimizerPlugin({
@@ -147,7 +148,6 @@ module.exports = {
 		}
 	},
 	plugins: [
-		// new BundleAnalyzerPlugin(),
 		new webpack.DefinePlugin({
 			"process.env.isMiniprogram": process.env.isMiniprogram, // 注入环境变量，用于业务代码判断
 			__VUE_PROD_DEVTOOLS__: false,
@@ -162,5 +162,5 @@ module.exports = {
 			resolvers: [VantResolver()]
 		}),
 		new WindiCSSWebpackPlugin()
-	]
+	].concat(isProd ? [new BundleAnalyzerPlugin()] : [])
 };
